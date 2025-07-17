@@ -1,0 +1,124 @@
+<!-- Simple Chatbot UI (Based on Fake_News_dt/FaceMask version) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Chatbot</title>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .chat-container {
+      width: 100%;
+      max-width: 600px;
+      background: #ffffff;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .chat-box {
+      max-height: 400px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    .user-msg, .bot-msg {
+      margin: 10px 0;
+    }
+
+    .user-msg {
+      text-align: right;
+      color: #333;
+    }
+
+    .bot-msg {
+      text-align: left;
+      color: #2e7d32;
+    }
+
+    form {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    input[type="text"] {
+      width: 85%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <h2>🧠 AI Chatbot</h2>
+    <div class="chat-box" id="chat-box"></div>
+    <form id="chat-form">
+      <input type="text" id="user-input" placeholder="Type a message..." required />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+ <script>
+  const chatForm = document.getElementById("chat-form");
+  const userInput = document.getElementById("user-input");
+  const chatBox = document.getElementById("chat-box");
+
+  chatForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const message = userInput.value.trim();
+    if (!message) return;
+
+    // Display user message
+    chatBox.innerHTML += `<div class="user-msg"><strong>You:</strong> ${message}</div>`;
+    userInput.value = "";
+
+    // Send to Rasa server
+    try {
+      const response = await fetch("http://localhost:5005/webhooks/rest/webhook", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ sender: "user", message }),
+      });
+
+      const data = await response.json();
+      if (data.length === 0) {
+        chatBox.innerHTML += `<div class="bot-msg"><strong>Bot:</strong> (no response)</div>`;
+      } else {
+        data.forEach((entry) => {
+          chatBox.innerHTML += `<div class="bot-msg"><strong>Bot:</strong> ${entry.text}</div>`;
+        });
+      }
+
+      chatBox.scrollTop = chatBox.scrollHeight;
+    } catch (error) {
+      chatBox.innerHTML += `<div class="bot-msg"><strong>Bot:</strong> Error connecting to server.</div>`;
+    }
+  });
+</script>
+</body>
+</html>
