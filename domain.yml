@@ -86,7 +86,7 @@ responses:
   - text: Please do not swear
   - text: How rude
   - text: That is not very nice
-  utter_GoodBye:
+  utter_goodbye:
   - text: See you later
   - text: Have a nice day
   - text: Bye! Come back again soon.
@@ -672,3 +672,5 @@ responses:
   - text: That is an interesting question, can you prove that you are?
   - text: That is an difficult question, can you prove that you are?
   - text: That depends, can you prove that you are?
+  utter_iamabot:
+    - text: Yes, I am a bot powered by Rasa.

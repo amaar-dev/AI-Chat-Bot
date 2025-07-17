@@ -55,7 +55,7 @@ stories:
 - story: GoodBye path
   steps:
   - intent: GoodBye
-  - action: utter_GoodBye
+  - action: utter_goodbye
 - story: CourtesyGoodBye path
   steps:
   - intent: CourtesyGoodBye

@@ -1,13 +1,117 @@
 version: "3.1"
 
 rules:
-
-- rule: Say goodbye anytime the user says goodbye
+- rule: Respond to Greeting
   steps:
-  - intent: goodbye
+  - intent: Greeting
+  - action: utter_Greeting
+
+- rule: Respond to GreetingResponse
+  steps:
+  - intent: GreetingResponse
+  - action: utter_GreetingResponse
+
+- rule: Respond to CourtesyGreeting
+  steps:
+  - intent: CourtesyGreeting
+  - action: utter_CourtesyGreeting
+
+- rule: Respond to CourtesyGreetingResponse
+  steps:
+  - intent: CourtesyGreetingResponse
+  - action: utter_CourtesyGreetingResponse
+
+- rule: Respond to CurrentHumanQuery
+  steps:
+  - intent: CurrentHumanQuery
+  - action: utter_CurrentHumanQuery
+
+- rule: Respond to NameQuery
+  steps:
+  - intent: NameQuery
+  - action: utter_NameQuery
+
+- rule: Respond to RealNameQuery
+  steps:
+  - intent: RealNameQuery
+  - action: utter_RealNameQuery
+
+- rule: Respond to TimeQuery
+  steps:
+  - intent: TimeQuery
+  - action: utter_TimeQuery
+
+- rule: Respond to Thanks
+  steps:
+  - intent: Thanks
+  - action: utter_Thanks
+
+- rule: Respond to NotTalking2U
+  steps:
+  - intent: NotTalking2U
+  - action: utter_NotTalking2U
+
+- rule: Respond to UnderstandQuery
+  steps:
+  - intent: UnderstandQuery
+  - action: utter_UnderstandQuery
+
+- rule: Respond to Shutup
+  steps:
+  - intent: Shutup
+  - action: utter_Shutup
+
+- rule: Respond to Swearing
+  steps:
+  - intent: Swearing
+  - action: utter_Swearing
+
+- rule: Respond to GoodBye
+  steps:
+  - intent: GoodBye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Respond to CourtesyGoodBye
+  steps:
+  - intent: CourtesyGoodBye
+  - action: utter_CourtesyGoodBye
+
+- rule: Respond to WhoAmI
+  steps:
+  - intent: WhoAmI
+  - action: utter_WhoAmI
+
+- rule: Respond to Clever
+  steps:
+  - intent: Clever
+  - action: utter_Clever
+
+- rule: Respond to Gossip
+  steps:
+  - intent: Gossip
+  - action: utter_Gossip
+
+- rule: Respond to Jokes
+  steps:
+  - intent: Jokes
+  - action: utter_Jokes
+
+- rule: Respond to PodBayDoor
+  steps:
+  - intent: PodBayDoor
+  - action: utter_PodBayDoor
+
+- rule: Respond to PodBayDoorResponse
+  steps:
+  - intent: PodBayDoorResponse
+  - action: utter_PodBayDoorResponse
+
+- rule: Respond to SelfAware
+  steps:
+  - intent: SelfAware
+  - action: utter_SelfAware
+
+- rule: Respond to bot challenge
   steps:
   - intent: bot_challenge
   - action: utter_iamabot

@@ -1,83 +1,210 @@
-version: '3.1'
+version: "3.1"
 nlu:
-- intent: Greeting
-  examples: "  - Hi\n  - Hi there\n  - Hola\n  - Hello\n  - Hello there\n  - Hya\n\
-    \  - Hya there"
-- intent: GreetingResponse
-  examples: "  - My user is Adam\n  - This is Adam\n  - I am Adam\n  - It is Adam\n\
-    \  - My user is Bella\n  - This is Bella\n  - I am Bella\n  - It is Bella"
-- intent: CourtesyGreeting
-  examples: "  - How are you?\n  - Hi how are you?\n  - Hello how are you?\n  - Hola\
-    \ how are you?\n  - How are you doing?\n  - Hope you are doing well?\n  - Hello\
-    \ hope you are doing well?"
-- intent: CourtesyGreetingResponse
-  examples: "  - Good thanks! My user is Adam\n  - Good thanks! This is Adam\n  -\
-    \ Good thanks! I am Adam\n  - Good thanks! It is Adam\n  - Great thanks! My user\
-    \ is Bella\n  - Great thanks! This is Bella\n  - Great thanks! I am Bella\n  -\
-    \ Great thanks! It is Bella"
-- intent: CurrentHumanQuery
-  examples: "  - What is my name?\n  - What do you call me?\n  - Who do you think\
-    \ I am?\n  - What do you think I am?\n  - Who are you talking to?\n  - What name\
-    \ do you call me by?\n  - Tell me my name"
-- intent: NameQuery
-  examples: "  - What is your name?\n  - What could I call you?\n  - What can I call\
-    \ you?\n  - What do your friends call you?\n  - Who are you?\n  - Tell me your\
-    \ name?"
-- intent: RealNameQuery
-  examples: "  - What is your real name?\n  - What is your real name please?\n  -\
-    \ What's your real name?\n  - Tell me your real name?\n  - Your real name?\n \
-    \ - Your real name please?\n  - Your real name please?"
-- intent: TimeQuery
-  examples: "  - What is the time?\n  - What's the time?\n  - Do you know what time\
-    \ it is?\n  - Do you know the time?\n  - Can you tell me the time?\n  - Tell me\
-    \ what time it is?\n  - Time"
-- intent: Thanks
-  examples: "  - OK thank you\n  - OK thanks\n  - OK\n  - Thanks\n  - Thank you\n\
-    \  - That's helpful"
-- intent: NotTalking2U
-  examples: "  - I am not talking to you\n  - I was not talking to you\n  - Not talking\
-    \ to you\n  - Wasn't for you\n  - Wasn't meant for you\n  - Wasn't communicating\
-    \ to you\n  - Wasn't speaking to you"
-- intent: UnderstandQuery
-  examples: "  - Do you understand what I am saying\n  - Do you understand me\n  -\
-    \ Do you know what I am saying\n  - Do you get me\n  - Comprendo\n  - Know what\
-    \ I mean"
-- intent: Shutup
-  examples: "  - Be quiet\n  - Shut up\n  - Stop talking\n  - Enough talking\n  -\
-    \ Please be quiet\n  - Quiet\n  - Shhh"
-- intent: Swearing
-  examples: "  - fuck off\n  - fuck\n  - twat\n  - shit"
-- intent: GoodBye
-  examples: "  - Bye\n  - Adios\n  - See you later\n  - Goodbye"
-- intent: CourtesyGoodBye
-  examples: "  - Thanks, bye\n  - Thanks for the help, goodbye\n  - Thank you, bye\n\
-    \  - Thank you, goodbye\n  - Thanks goodbye\n  - Thanks good bye"
-- intent: WhoAmI
-  examples: "  - Can you see me?\n  - Do you see me?\n  - Can you see anyone in the\
-    \ camera?\n  - Do you see anyone in the camera?\n  - Identify me\n  - Who am I\
-    \ please"
-- intent: Clever
-  examples: "  - You are very clever\n  - You are a very clever girl\n  - You are\
-    \ very intelligent\n  - You are a very intelligent girl\n  - You are a genious\n\
-    \  - Clever girl\n  - Genious"
-- intent: Gossip
-  examples: "  - I am bored gossip with me\n  - Got any gossip\n  - I want to hear\
-    \ some gossip\n  - Tell me some gossip\n  - Any gossip\n  - Tell me some more\
-    \ gossip"
-- intent: Jokes
-  examples: "  - Tell me a joke\n  - Do you know any jokes\n  - How about a joke\n\
-    \  - Give me a joke\n  - Make me laugh\n  - I need cheering up"
-- intent: PodBayDoor
-  examples: "  - Open the pod bay door\n  - Can you open the pod bay door\n  - Will\
-    \ you open the pod bay door\n  - Open the pod bay door please\n  - Can you open\
-    \ the pod bay door please\n  - Will you open the pod bay door please\n  - Pod\
-    \ bay door"
-- intent: PodBayDoorResponse
-  examples: "  - Why\n  - Why not\n  - Why can you not open the pod bay door\n  -\
-    \ Why will you not open the pod bay door\n  - Well why not\n  - Surely you can\n\
-    \  - Tell me why"
-- intent: SelfAware
-  examples: "  - Can you prove you are self-aware\n  - Can you prove you are self\
-    \ aware\n  - Can you prove you have a conscious\n  - Can you prove you are self-aware\
-    \ please\n  - Can you prove you are self aware please\n  - Can you prove you have\
-    \ a conscious please\n  - prove you have a conscious"
+  - intent: Greeting
+    examples: |
+      - Hi
+      - Hi there
+      - Hola
+      - Hello
+      - Hello there
+      - Hya
+      - Hya there
+
+  - intent: GreetingResponse
+    examples: |
+      - My user is Adam
+      - This is Adam
+      - I am Adam
+      - It is Adam
+      - My user is Bella
+      - This is Bella
+      - I am Bella
+      - It is Bella
+
+  - intent: CourtesyGreeting
+    examples: |
+      - How are you?
+      - Hi how are you?
+      - Hello how are you?
+      - Hola how are you?
+      - How are you doing?
+      - Hope you are doing well?
+      - Hello hope you are doing well?
+
+  - intent: CourtesyGreetingResponse
+    examples: |
+      - Good thanks! My user is Adam
+      - Good thanks! This is Adam
+      - Good thanks! I am Adam
+      - Good thanks! It is Adam
+      - Great thanks! My user is Bella
+      - Great thanks! This is Bella
+      - Great thanks! I am Bella
+      - Great thanks! It is Bella
+
+  - intent: CurrentHumanQuery
+    examples: |
+      - What is my name?
+      - What do you call me?
+      - Who do you think I am?
+      - What do you think I am?
+      - Who are you talking to?
+      - What name do you call me by?
+      - Tell me my name
+
+  - intent: NameQuery
+    examples: |
+      - What is your name?
+      - What could I call you?
+      - What can I call you?
+      - What do your friends call you?
+      - Who are you?
+      - Tell me your name?
+
+  - intent: RealNameQuery
+    examples: |
+      - What is your real name?
+      - What is your real name please?
+      - What's your real name?
+      - Tell me your real name?
+      - Your real name?
+      - Your real name please?
+      - Your real name please?
+
+  - intent: TimeQuery
+    examples: |
+      - What is the time?
+      - What's the time?
+      - Do you know what time it is?
+      - Do you know the time?
+      - Can you tell me the time?
+      - Tell me what time it is?
+      - Time
+
+  - intent: Thanks
+    examples: |
+      - OK thank you
+      - OK thanks
+      - OK
+      - Thanks
+      - Thank you
+      - That's helpful
+
+  - intent: NotTalking2U
+    examples: |
+      - I am not talking to you
+      - I was not talking to you
+      - Not talking to you
+      - Wasn't for you
+      - Wasn't meant for you
+      - Wasn't communicating to you
+      - Wasn't speaking to you
+
+  - intent: UnderstandQuery
+    examples: |
+      - Do you understand what I am saying
+      - Do you understand me
+      - Do you know what I am saying
+      - Do you get me
+      - Comprendo
+      - Know what I mean
+
+  - intent: Shutup
+    examples: |
+      - Be quiet
+      - Shut up
+      - Stop talking
+      - Enough talking
+      - Please be quiet
+      - Quiet
+      - Shhh
+
+  - intent: Swearing
+    examples: |
+      - fuck off
+      - fuck
+      - twat
+      - shit
+
+  - intent: GoodBye
+    examples: |
+      - Bye
+      - Adios
+      - See you later
+      - Goodbye
+
+  - intent: CourtesyGoodBye
+    examples: |
+      - Thanks, bye
+      - Thanks for the help, goodbye
+      - Thank you, bye
+      - Thank you, goodbye
+      - Thanks goodbye
+      - Thanks good bye
+
+  - intent: WhoAmI
+    examples: |
+      - Can you see me?
+      - Do you see me?
+      - Can you see anyone in the camera?
+      - Do you see anyone in the camera?
+      - Identify me
+      - Who am I please
+
+  - intent: Clever
+    examples: |
+      - You are very clever
+      - You are a very clever girl
+      - You are very intelligent
+      - You are a very intelligent girl
+      - You are a genious
+      - Clever girl
+      - Genious
+
+  - intent: Gossip
+    examples: |
+      - I am bored gossip with me
+      - Got any gossip
+      - I want to hear some gossip
+      - Tell me some gossip
+      - Any gossip
+      - Tell me some more gossip
+
+  - intent: Jokes
+    examples: |
+      - Tell me a joke
+      - Do you know any jokes
+      - How about a joke
+      - Give me a joke
+      - Make me laugh
+      - I need cheering up
+
+  - intent: PodBayDoor
+    examples: |
+      - Open the pod bay door
+      - Can you open the pod bay door
+      - Will you open the pod bay door
+      - Open the pod bay door please
+      - Can you open the pod bay door please
+      - Will you open the pod bay door please
+      - Pod bay door
+
+  - intent: PodBayDoorResponse
+    examples: |
+      - Why
+      - Why not
+      - Why can you not open the pod bay door
+      - Why will you not open the pod bay door
+      - Well why not
+      - Surely you can
+      - Tell me why
+
+  - intent: SelfAware
+    examples: |
+      - Can you prove you are self-aware
+      - Can you prove you are self aware
+      - Can you prove you have a conscious
+      - Can you prove you are self-aware please
+      - Can you prove you are self aware please
+      - Can you prove you have a conscious please
+      - prove you have a conscious
